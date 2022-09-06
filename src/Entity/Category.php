@@ -21,9 +21,18 @@ class Category
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: Product::class)]
     private Collection $products;
 
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Prestation::class)]
+    private Collection $prestations;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->prestations = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getname();
     }
 
     public function getId(): ?int
@@ -67,6 +76,36 @@ class Category
             // set the owning side to null (unless already changed)
             if ($product->getCategory() === $this) {
                 $product->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Prestation>
+     */
+    public function getPrestations(): Collection
+    {
+        return $this->prestations;
+    }
+
+    public function addPrestation(Prestation $prestation): self
+    {
+        if (!$this->prestations->contains($prestation)) {
+            $this->prestations->add($prestation);
+            $prestation->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrestation(Prestation $prestation): self
+    {
+        if ($this->prestations->removeElement($prestation)) {
+            // set the owning side to null (unless already changed)
+            if ($prestation->getCategory() === $this) {
+                $prestation->setCategory(null);
             }
         }
 
