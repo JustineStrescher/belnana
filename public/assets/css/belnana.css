@@ -3,22 +3,24 @@ color: #F4EDDE;
 }
 
 
+
 .navbar-custom{
     background-color: #9DAD9B;
+    
 }
 .navbar-custom a{
-    color: #F4EDDE;
+    color: #F4EDDE !important;
 }
 .navbar-custom a:hover{
-    color: #DED887;
+    color: #DED887 !important;
 }
 
 .footer-custom {
     text-align: center;
-    position:fixed;
-    bottom: 0;
+    position: absolute;
     width: 100%;
     padding-top: 25px;
+    margin-top: 50px;
    
     
     background-color: #9DAD9B;
@@ -27,6 +29,11 @@ color: #F4EDDE;
 .footer-custom p{
     color: #F4EDDE
 }
+.prestation-item {
+    margin-top: 30px;
+    
+
+}
 
 .prestation-item h5 {
     text-transform: uppercase;
@@ -34,9 +41,19 @@ color: #F4EDDE;
     margin-bottom: 1px ;
 }
 
-.prestation-item span {
+.prestation-item .prestation-subtitle{
     font-size: 14px;
     display: block;
+    margin-bottom: 10px;
+}
+
+.prestation-item .prestation-price{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.prestation-container{
+margin-bottom: 125px;
 }
 body {
     
@@ -46,4 +63,9 @@ body {
 .logo{
     width: 70px;
     height: auto;
+}
+
+.img-fluid{
+    
+    object-fit: cover;
 }

@@ -5,14 +5,14 @@
 {% block content %}
 <h1>Prestations</h1>
 
-<div class="row">
+<div class="row prestation-container">
     {% for prestation in prestations %}
         <div class="col-md-4">
             <div class="prestation-item text-center">
-                <img src="/uploads/{{prestation.illustration}}" alt="" class="img-fluid">
+                <img src="/uploads/{{prestation.illustration}}" alt="" class="img-fluid" style="width: 200px; height: 200px">
                 <h5>{{prestation.name}}</h5>
-                <span>{{prestation.subtitle}}</span>
-                {{prestation.price}}
+                <span class="prestation-subtitle">{{prestation.subtitle}}</span>
+                <span class="prestation-price">{{(prestation.price /100)|number_format(2, ',', '.')}} €</span>
             </div>
             
         </div>
