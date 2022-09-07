@@ -1,17 +1,49 @@
 .navbar-item-custom,  .navbar-item-custom a {
-color: white;
+color: #F4EDDE;
 }
 
+
 .navbar-custom{
-    background-color: pink;
+    background-color: #9DAD9B;
+}
+.navbar-custom a{
+    color: #F4EDDE;
+}
+.navbar-custom a:hover{
+    color: #DED887;
 }
 
 .footer-custom {
     text-align: center;
-    position: fixed;
+    position:fixed;
     bottom: 0;
     width: 100%;
-    background-color: pink;
     padding-top: 25px;
+   
+    
+    background-color: #9DAD9B;
+    
+}
+.footer-custom p{
+    color: #F4EDDE
 }
 
+.prestation-item h5 {
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 1px ;
+}
+
+.prestation-item span {
+    font-size: 14px;
+    display: block;
+}
+body {
+    
+    background-color: #E9D9C6;
+    
+}
+.logo{
+    width: 70px;
+    height: auto;
+}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Prestations - Belna'Na{% endblock %}
+
+{% block content %}
+<h1>Prestations</h1>
+
+<div class="row">
+    {% for prestation in prestations %}
+        <div class="col-md-4">
+            <div class="prestation-item text-center">
+                <img src="/uploads/{{prestation.illustration}}" alt="" class="img-fluid">
+                <h5>{{prestation.name}}</h5>
+                <span>{{prestation.subtitle}}</span>
+                {{prestation.price}}
+            </div>
+            
+        </div>
+    {% endfor %}
+</div>
+
+   
+
+{% endblock %}
