@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Category;
+use App\Entity\Header;
 use App\Entity\Prestation;
 use App\Entity\Product;
 use App\Entity\User;
@@ -49,5 +50,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Categories', 'fa fa-list', Category::class);
         yield MenuItem::linkToCrud('Produits', 'fa fa-tag', Product::class);
         yield MenuItem::linkToCrud('Prestations', 'fa fa-tag', Prestation::class);
+        yield MenuItem::linkToCrud('Headers', 'fa fa-desktop', Header::class);
     }
 }
