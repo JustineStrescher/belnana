@@ -15,26 +15,19 @@ use Symfony\Component\Mime\Email;
 class ContactController extends AbstractController
 {
     #[Route('/contact', name:'contact.index')]
-    public function index(Request $request, EntityManagerInterface $manager): Response
+    public function index(Request $request): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-            $contact = $form->getData();
-
-            $manager->persist($contact);
-            $manager->flush();
-
+            $this->addFlash('notice', 'Merci de nous avoir contacté. Notre équipe va vous répondre dans les meilleurs délais.');
+            
             
 
-        
+           
 
-            $this->addFlash(
-                'succes',
-                'Votre message a été envoyé avec succès !'
-            );
             return $this->redirectToRoute('contact.index');
         }
 

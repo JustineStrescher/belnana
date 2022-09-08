@@ -3,14 +3,26 @@
 {% block title %}Contact - Belna'Na{% endblock %}
 
 {% block content %}
-<div class="container">
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-succes mt-4">
-           
-            {{message}}
-        </div>
-    {% endfor %}
-    <h1>Formulaire de contact</h1>
-    {{form(form)}}
+
+<h1>Nous contacter</h1>
+{% for message in app.flashes('notice') %}
+    <div class="alert alert-info">{{ message }}</div>
+{% endfor %}
+<div class="row">
+    <div class="col-md-8">
+        {{form(form)}}
+    </div>
+    
+    <div class="col-md-4">
+    <strong>Belna'Na</strong>
+    <hr>
+    <a href="tel:+33676119891">06 76 11 98 91</a>
+    <br/>
+    4 Rue du Faubourg Saint-Jacques,<br/>
+    21200 Beaune
+    <br/>
+    <a href="mailto:justinestrescherpro@gmail.com">Mail</a>
+    </div>
+
 </div>
 {% endblock %}
