@@ -6,14 +6,24 @@ color: #F4EDDE;
 
 .navbar-custom{
     background-color: #9DAD9B;
+    width: 100%;
+    
     
 }
 .navbar-custom a{
     color: #F4EDDE !important;
+    display: inline;
+    font-family: "Helvetica";
+    font-size: 17px;
+    width: 200px;
+    
+   
 }
 .navbar-custom a:hover{
     color: #DED887 !important;
 }
+
+
 
 .footer-custom {
     text-align: center;
@@ -58,14 +68,17 @@ margin-bottom: 125px;
 body {
     
     background-color: #E9D9C6;
+    position: relative;
     
 }
-.logo{
-    width: 70px;
-    height: auto;
-}
+
 
 .img-fluid{
     
     object-fit: cover;
+}
+.logo{
+    float: center;
+    height: 70px;
+    position: absolute;
 }

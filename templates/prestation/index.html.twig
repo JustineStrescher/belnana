@@ -2,23 +2,36 @@
 
 {% block title %}Prestations - Belna'Na{% endblock %}
 
+
 {% block content %}
-<h1>Prestations</h1>
 
-<div class="row prestation-container">
-    {% for prestation in prestations %}
-        <div class="col-md-4">
-            <div class="prestation-item text-center">
-                <img src="/uploads/{{prestation.illustration}}" alt="" class="img-fluid" style="width: 200px; height: 200px">
-                <h5>{{prestation.name}}</h5>
-                <span class="prestation-subtitle">{{prestation.subtitle}}</span>
-                <span class="prestation-price">{{(prestation.price /100)|number_format(2, ',', '.')}} €</span>
+<div class="row">
+    <div class="col-md-3">
+        <h2>Filtrer</h2>
+        {{form(form)}}
+        
+    </div>
+
+    <div class="col-md-9">
+        <h2>Prestations</h2>
+            <div class="row prestation-container">
+                {% for prestation in prestations %}
+                <div class="col-md-4">
+                
+                    <div class="prestation-item text-center">
+                        <a href="{{ path('app_prestation',{'slug' :prestation.slug}) }}">
+                        <img src="/uploads/{{prestation.illustration}}" alt="" class="img-fluid" style="width: 200px; height: 200px">
+                        </a>
+                        <h5>{{prestation.name}}</h5>
+                        <span class="prestation-subtitle">{{prestation.subtitle}}</span>
+                        <span class="prestation-price">{{(prestation.price /100)|number_format(2, ',', '.')}} €</span>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-            
-        </div>
-    {% endfor %}
+        
+
+    </div>
+
 </div>
-
-   
-
 {% endblock %}

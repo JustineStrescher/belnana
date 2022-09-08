@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}{{ prestation.name}}|Belna'Na{%
+        endblock %}
+    
+    {% block content %}
+        <div class="row">
+            <div class="col-md-5 prestation-one">
+                <img src="/uploads/{{ prestation.illustration }}" alt="{{ prestation.name }}" class=" img-fluid" >
+            </div>
+    
+    
+                <div class="col-md-7 my-auto">
+                    <h3>{{ prestation.name }}</h3>
+                    <p>{{prestation.subtitle}}</p>
+                    <span class="prestation-page-price">{{ (prestation.price/100)|number_format(2, ',', '.') }} € </span>
+                    <p>{{prestation.description}}</p>
+                    
+                </div>
+    
+    
+    
+        </div>
+        
+    
+    {% endblock %}
